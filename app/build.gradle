@@ -72,6 +72,8 @@ dependencies {
     testImplementation mockitoInline
     testImplementation coreTestingAndroidx
 
+    androidTestImplementation espressoInline
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test:runner:1.3.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

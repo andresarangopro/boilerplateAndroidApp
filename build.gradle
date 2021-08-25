@@ -39,6 +39,7 @@ ext {
     recyclerViewVersion ="1.1.0"
     okhttp3Version ="1.0.0"
     coreTestingVersion = "2.1.0"
+    espressoInlineVersion="1.0.0"
 
     //lifecycle
     lifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
@@ -71,6 +72,9 @@ ext {
 
     //core testing
     coreTestingAndroidx = "androidx.arch.core:core-testing:$coreTestingVersion"
+
+    //espresso inline
+    espressoInline = "com.jakewharton.espresso:okhttp3-idling-resources:$espressoInlineVersion"
 
 
 
