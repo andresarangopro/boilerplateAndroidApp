@@ -17,7 +17,7 @@ buildscript {
 ext {
 
     //SDK & Tools
-    minSdkVersion = 16
+    minSdkVersion = 21
     targetSdkVersion = 30
     compileSdkVersion = 30
     versionCode = 1
@@ -74,7 +74,7 @@ ext {
     coreTestingAndroidx = "androidx.arch.core:core-testing:$coreTestingVersion"
 
     //espresso inline
-    espressoInline = "com.jakewharton.espresso:okhttp3-idling-resources:$espressoInlineVersion"
+    espressoInline = "com.jakewharton.espresso:okhttp3-idling-resource:$espressoInlineVersion"
 
 
 
