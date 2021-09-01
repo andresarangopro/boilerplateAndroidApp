@@ -1,23 +1,13 @@
 package com.example.apptdd.playlist
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
+import androidx.lifecycle.*
 
 class PlaylistViewModel(
     private val repository: PlaylistRepository
 ) :ViewModel() {
 
-    val playlists = MutableLiveData<Result<List<Playlist>>>()
-
-    init{
-        viewModelScope.launch{
-            repository.getPlaylists()
-                .collect {
-                    playlists.value = it
-                }
-        }
+    val playlists = liveData<Result<List<Playlist>>>{
+        emitSource(repository.getPlaylists().asLiveData())
     }
+
 }

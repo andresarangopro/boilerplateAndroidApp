@@ -2,8 +2,11 @@ package com.example.apptdd.playlist
 
 import kotlinx.coroutines.flow.Flow
 
-class PlaylistRepository {
+class PlaylistRepository(
+    private val service:PlaylistService
+) {
     suspend fun getPlaylists(): Flow<Result<List<Playlist>>> {
-        TODO("Not yet implemented")
+        service.fetchPlaylists()
+        return service.fetchPlaylists()
     }
 }
