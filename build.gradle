@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -40,6 +41,8 @@ ext {
     okhttp3Version ="1.0.0"
     coreTestingVersion = "2.1.0"
     espressoInlineVersion="1.0.0"
+    daggerhiltversion = "2.38.1"
+    daggerhiltCompilerversion = "2.38.1"
 
     //lifecycle
     lifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
@@ -75,6 +78,10 @@ ext {
 
     //espresso inline
     espressoInline = "com.jakewharton.espresso:okhttp3-idling-resource:$espressoInlineVersion"
+
+    //dagger Hilt
+    daggerHilt = "com.google.dagger:hilt-android:$daggerhiltversion"
+    daggerHiltCompiler = "com.google.dagger:hilt-android:$daggerhiltCompilerversion"
 
 
 

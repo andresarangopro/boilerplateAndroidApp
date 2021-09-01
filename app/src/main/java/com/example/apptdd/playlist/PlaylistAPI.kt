@@ -1,10 +1,10 @@
 package com.example.apptdd.playlist
 
-import kotlinx.coroutines.flow.Flow
+import retrofit2.http.GET
 
 interface PlaylistAPI{
-    suspend fun fetchAllPlaylists():List<Playlist> {
-        TODO("")
-    }
+
+    @GET("playlists")
+    suspend fun fetchAllPlaylists():List<Playlist>
 
 }

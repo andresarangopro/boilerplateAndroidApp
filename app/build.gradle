@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -30,6 +32,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs = freeCompilerArgs + "-Xallow-result-return-type"
     }
     buildFeatures {
         viewBinding true
@@ -68,6 +71,10 @@ dependencies {
     //recycler view
     implementation recyclerView
 
+    //dagger hilt
+    implementation daggerHilt
+    kapt 'com.google.dagger:hilt-compiler:2.38.1'
+
     //coroutines tests
     testImplementation coroutinesTest
 
@@ -87,4 +94,9 @@ dependencies {
     }
 
 
+
+}
+
+kapt {
+    correctErrorTypes true
 }

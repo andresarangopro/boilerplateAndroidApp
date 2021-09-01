@@ -1,6 +1,7 @@
 package com.example.apptdd.playlist
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,15 +11,16 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.apptdd.R
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class PlaylistFragment : Fragment() {
 
     lateinit var viewModel: PlaylistViewModel
-    lateinit var viewModelFactory: PlaylistViewModelFactory
 
-    private val service = PlaylistService(object : PlaylistAPI{})
-    private val repository = PlaylistRepository(service)
+    @Inject
+    lateinit var viewModelFactory: PlaylistViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,15 +53,12 @@ class PlaylistFragment : Fragment() {
     }
 
     private fun setupViewModel() {
-        viewModelFactory = PlaylistViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(PlaylistViewModel::class.java)
     }
 
     companion object {
         @JvmStatic
         fun newInstance() =
-            PlaylistFragment().apply {
-
-            }
+            PlaylistFragment().apply {}
     }
 }
